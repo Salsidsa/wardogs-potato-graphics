@@ -59,9 +59,6 @@ Open the game's graphics settings and set everything as below. **Overall Quality
 | Effects | Potato |
 | Texture Streaming | Potato |
 
-* DLSS / DLAA needs an RTX card.
-* The "Quality" sliders under Motion Blur, Depth of Field, Lens Flare and Bloom turn grey once the effect is disabled. Ignore them.
-
 **Apply the settings, then close the game completely.** You have to do Step 2 with the game closed.
 
 ---
@@ -123,8 +120,6 @@ The first two settings make the driver actually apply your LOD Bias value. Witho
 
 **TL;DR: use +3** unless you're fine with playing without a minimap.
 
-*Tip: hex value = LOD Bias × 8. For example, +3 → 24 → `0x18`.*
-
 ---
 
 ## How to undo
@@ -146,5 +141,3 @@ The first two settings make the driver actually apply your LOD Bias value. Witho
 ## Cheat sheet
 
 ![WARDOGS potato graphics cheat sheet: all settings](images/cheatsheet.png)
-
-Found something that changed after a game update? [Open an issue](../../issues).

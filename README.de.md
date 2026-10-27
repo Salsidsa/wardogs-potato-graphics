@@ -61,9 +61,6 @@ Ultra-niedrige („Potato“-)Grafik für **WARDOGS**: Potato-Einstellungen im S
 | Effects | Potato |
 | Texture Streaming | Potato |
 
-* DLSS / DLAA braucht eine RTX-Karte.
-* Die „Quality“-Regler unter Motion Blur, Depth of Field, Lens Flare und Bloom werden grau, sobald der Effekt deaktiviert ist. Ignoriere sie einfach.
-
 **Übernimm die Einstellungen und schließe das Spiel komplett.** Schritt 2 musst du bei geschlossenem Spiel machen.
 
 ---
@@ -125,8 +122,6 @@ Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias 
 
 **Kurz gesagt: Nimm +3**, außer du kommst ohne Minimap klar.
 
-*Tipp: Hex-Wert = LOD Bias × 8. Beispiel: +3 → 24 → `0x18`.*
-
 ---
 
 ## Rückgängig machen
@@ -148,5 +143,3 @@ Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias 
 ## Spickzettel
 
 ![WARDOGS Potato-Grafik-Spickzettel: alle Einstellungen](images/cheatsheet.png)
-
-Hat sich nach einem Spielupdate etwas geändert? [Erstelle ein Issue](../../issues).
