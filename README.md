@@ -1,3 +1,5 @@
+**English** | [Русский](README.ru.md) | [Українська](README.uk.md) | [Deutsch](README.de.md)
+
 # WARDOGS Potato Graphics Guide 🥔
 
 Ultra-low ("potato") graphics for **WARDOGS**: in-game Potato settings, one `GameUserSettings.ini` line, and **LOD Bias** through **NVIDIA Profile Inspector**.
