@@ -4,13 +4,13 @@
 
 Ultra-low ("potato") graphics for **WARDOGS**: in-game Potato settings, one `GameUserSettings.ini` line, and **LOD Bias** through **NVIDIA Profile Inspector**.
 
-**TL;DR:** Potato in-game settings → `sg.ShadowQuality=4` in GameUserSettings.ini (set to read-only) → NVIDIA Profile Inspector with LOD Bias **+3**. You end up with no shadows, much less foliage and flat, low-detail textures.
+**TL;DR:** Potato in-game settings → `sg.ShadowQuality=4` in GameUserSettings.ini (set to read-only) → NVIDIA Profile Inspector with LOD Bias **+2**. You end up with no shadows, much less foliage and flat, low-detail textures.
 
 *Last updated: 2026-10-27. The game is still getting updates, so settings may change.*
 
 ![WARDOGS before / after potato graphics](images/before-after.png)
 
-*The "after" screenshot uses the max LOD Bias of +15. The recommended value is +3 ([why](#which-lod-bias-should-i-use)).*
+*The "after" screenshot uses the max LOD Bias of +15. The recommended value is +2 ([why](#which-lod-bias-should-i-use)).*
 
 > ⚠️ **Use at your own risk.** The devs haven't said anything about NVIDIA Profile Inspector so far, and they may disallow it in the future. If that happens, roll everything back (see [How to undo](#how-to-undo)).
 
@@ -87,7 +87,7 @@ Download NPI from the GitHub link above, unzip it and run `nvidiaProfileInspecto
 ### Option A: import a ready profile (easiest)
 
 1. Download one of these profiles. Open the file and click **Download raw file**.
-    * [`WARDOGS_potato_LOD3_balanced.nip`](profiles/WARDOGS_potato_LOD3_balanced.nip) (**recommended**, LOD Bias +3)
+    * [`WARDOGS_potato_LOD2_balanced.nip`](profiles/WARDOGS_potato_LOD2_balanced.nip) (**recommended**, LOD Bias +2)
     * [`WARDOGS_potato_LOD15_max.nip`](profiles/WARDOGS_potato_LOD15_max.nip) (max potato, LOD Bias +15, breaks the minimap)
 2. In NPI, click **Import user defined profiles** in the toolbar and pick the `.nip` file.
 3. Click **Apply changes** (top right).
@@ -104,7 +104,7 @@ Download NPI from the GitHub link above, unzip it and run `nvidiaProfileInspecto
 |:--|:--|:--|
 | Antialiasing - Transparency Supersampling | AA_MODE_REPLAY_MODE_ALL | `0x00000008` |
 | Texture filtering - Driver Controlled LOD Bias | Off | `0x00000000` |
-| Texture filtering - LOD Bias | +3 *(see below)* | `0x00000018` |
+| Texture filtering - LOD Bias | +2 *(see below)* | `0x00000010` |
 
 The first two settings make the driver actually apply your LOD Bias value. Without them, the third one does nothing.
 
@@ -114,7 +114,8 @@ The first two settings make the driver actually apply your LOD Bias value. Witho
 
 | LOD Bias | Hex | Result |
 |:--|:--|:--|
-| **+3** | `0x00000018` | **Recommended.** Good balance between playability and advantage. The minimap still works. |
+| **+2** | `0x00000010` | **Recommended.** Good balance between playability and advantage. The minimap still works. |
+| +3 | `0x00000018` | Not much point, but feel free to try. |
 | +4 | `0x00000020` | Not much point, but feel free to try. |
 | +5 | `0x00000028` | Not much point, but feel free to try. |
 | +6 | `0x00000030` | Not much point, but feel free to try. |
@@ -128,7 +129,7 @@ The first two settings make the driver actually apply your LOD Bias value. Witho
 | +14 | `0x00000070` | Not much point, but feel free to try. |
 | +15 | `0x00000078` | Max potato. This is the "after" screenshot. The minimap is unusable. |
 
-**TL;DR: use +3** unless you're fine with playing without a minimap.
+**TL;DR: use +2** unless you're fine with playing without a minimap.
 
 ---
 
@@ -142,7 +143,7 @@ The first two settings make the driver actually apply your LOD Bias value. Witho
 
 ## Known issues
 
-* **The minimap is unusable**: your LOD Bias is above +3. Set it back to +3 (`0x00000018`).
+* **The minimap is unusable**: your LOD Bias is above +3. Set it back to +2 (`0x00000010`).
 * **In-game settings won't save**: GameUserSettings.ini is still read-only from Step 2. That's expected.
 * **AMD / Intel GPU**: NPI is NVIDIA-only, but Steps 1–2 still work.
 

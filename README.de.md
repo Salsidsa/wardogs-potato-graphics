@@ -4,13 +4,13 @@
 
 Ultra-niedrige („Potato“-)Grafik für **WARDOGS**: Potato-Einstellungen im Spiel, eine Zeile in der `GameUserSettings.ini` und **LOD Bias** über den **NVIDIA Profile Inspector**.
 
-**Kurz gesagt:** Potato-Einstellungen im Spiel → `sg.ShadowQuality=4` in der GameUserSettings.ini (schreibgeschützt) → NVIDIA Profile Inspector mit LOD Bias **+3**. Ergebnis: keine Schatten, deutlich weniger Vegetation und flache, detailarme Texturen.
+**Kurz gesagt:** Potato-Einstellungen im Spiel → `sg.ShadowQuality=4` in der GameUserSettings.ini (schreibgeschützt) → NVIDIA Profile Inspector mit LOD Bias **+2**. Ergebnis: keine Schatten, deutlich weniger Vegetation und flache, detailarme Texturen.
 
 *Zuletzt aktualisiert: 2026-10-27. Das Spiel bekommt weiterhin Updates, die Einstellungen können sich also ändern.*
 
 ![WARDOGS vorher und nachher mit Potato-Grafik](images/before-after.png)
 
-*Der „Nachher“-Screenshot nutzt den maximalen LOD Bias von +15. Empfohlen ist +3 ([warum](#welchen-lod-bias-soll-ich-nehmen)).*
+*Der „Nachher“-Screenshot nutzt den maximalen LOD Bias von +15. Empfohlen ist +2 ([warum](#welchen-lod-bias-soll-ich-nehmen)).*
 
 > ⚠️ **Nutzung auf eigene Gefahr.** Die Entwickler haben sich bisher nicht zum NVIDIA Profile Inspector geäußert und könnten ihn in Zukunft verbieten. Falls das passiert, mach alles rückgängig (siehe [Rückgängig machen](#rückgängig-machen)).
 
@@ -89,7 +89,7 @@ Lade NPI über den Link oben herunter, entpacke es und starte `nvidiaProfileInsp
 ### Option A: fertiges Profil importieren (am einfachsten)
 
 1. Lade eines dieser Profile herunter. Öffne die Datei und klicke auf **Download raw file**.
-    * [`WARDOGS_potato_LOD3_balanced.nip`](profiles/WARDOGS_potato_LOD3_balanced.nip) (**empfohlen**, LOD Bias +3)
+    * [`WARDOGS_potato_LOD2_balanced.nip`](profiles/WARDOGS_potato_LOD2_balanced.nip) (**empfohlen**, LOD Bias +2)
     * [`WARDOGS_potato_LOD15_max.nip`](profiles/WARDOGS_potato_LOD15_max.nip) (maximal Potato, LOD Bias +15, macht die Minimap unbrauchbar)
 2. Klicke in NPI in der Werkzeugleiste auf **Import user defined profiles** und wähle die `.nip`-Datei.
 3. Klicke auf **Apply changes** (oben rechts).
@@ -106,7 +106,7 @@ Lade NPI über den Link oben herunter, entpacke es und starte `nvidiaProfileInsp
 |:--|:--|:--|
 | Antialiasing - Transparency Supersampling | AA_MODE_REPLAY_MODE_ALL | `0x00000008` |
 | Texture filtering - Driver Controlled LOD Bias | Off | `0x00000000` |
-| Texture filtering - LOD Bias | +3 *(siehe unten)* | `0x00000018` |
+| Texture filtering - LOD Bias | +2 *(siehe unten)* | `0x00000010` |
 
 Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias überhaupt anwendet. Ohne sie bewirkt die dritte nichts.
 
@@ -116,7 +116,8 @@ Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias 
 
 | LOD Bias | Hex | Ergebnis |
 |:--|:--|:--|
-| **+3** | `0x00000018` | **Empfohlen.** Guter Kompromiss zwischen Spielbarkeit und Vorteil. Die Minimap funktioniert weiterhin. |
+| **+2** | `0x00000010` | **Empfohlen.** Guter Kompromiss zwischen Spielbarkeit und Vorteil. Die Minimap funktioniert weiterhin. |
+| +3 | `0x00000018` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
 | +4 | `0x00000020` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
 | +5 | `0x00000028` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
 | +6 | `0x00000030` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
@@ -130,7 +131,7 @@ Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias 
 | +14 | `0x00000070` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
 | +15 | `0x00000078` | Maximal Potato. Das ist der „Nachher“-Screenshot. Die Minimap ist unbrauchbar. |
 
-**Kurz gesagt: Nimm +3**, außer du kommst ohne Minimap klar.
+**Kurz gesagt: Nimm +2**, außer du kommst ohne Minimap klar.
 
 ---
 
@@ -144,7 +145,7 @@ Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias 
 
 ## Bekannte Probleme
 
-* **Minimap unbrauchbar:** Dein LOD Bias liegt über +3. Stell ihn wieder auf +3 (`0x00000018`).
+* **Minimap unbrauchbar:** Dein LOD Bias liegt über +3. Stell ihn wieder auf +2 (`0x00000010`).
 * **Einstellungen im Spiel werden nicht gespeichert:** Die GameUserSettings.ini ist seit Schritt 2 noch schreibgeschützt. Das ist so gewollt.
 * **AMD- / Intel-Grafikkarte:** NPI funktioniert nur mit NVIDIA, die Schritte 1–2 aber trotzdem.
 
