@@ -115,8 +115,18 @@ The first two settings make the driver actually apply your LOD Bias value. Witho
 | LOD Bias | Hex | Result |
 |:--|:--|:--|
 | **+3** | `0x00000018` | **Recommended.** Good balance between playability and advantage. The minimap still works. |
-| +4 to +15 | — | ❌ The minimap becomes unusable. |
-| +15 | `0x00000078` | Max potato. This is the "after" screenshot. |
+| +4 | `0x00000020` | Not much point, but feel free to try. |
+| +5 | `0x00000028` | Not much point, but feel free to try. |
+| +6 | `0x00000030` | Not much point, but feel free to try. |
+| +7 | `0x00000038` | Not much point, but feel free to try. |
+| +8 | `0x00000040` | Not much point, but feel free to try. |
+| +9 | `0x00000048` | Not much point, but feel free to try. |
+| +10 | `0x00000050` | Not much point, but feel free to try. |
+| +11 | `0x00000058` | Not much point, but feel free to try. |
+| +12 | `0x00000060` | Not much point, but feel free to try. |
+| +13 | `0x00000068` | Not much point, but feel free to try. |
+| +14 | `0x00000070` | Not much point, but feel free to try. |
+| +15 | `0x00000078` | Max potato. This is the "after" screenshot. The minimap is unusable. |
 
 **TL;DR: use +3** unless you're fine with playing without a minimap.
 

@@ -117,8 +117,18 @@ Die ersten beiden Einstellungen sorgen dafür, dass der Treiber deinen LOD Bias 
 | LOD Bias | Hex | Ergebnis |
 |:--|:--|:--|
 | **+3** | `0x00000018` | **Empfohlen.** Guter Kompromiss zwischen Spielbarkeit und Vorteil. Die Minimap funktioniert weiterhin. |
-| +4 bis +15 | — | ❌ Die Minimap wird unbrauchbar. |
-| +15 | `0x00000078` | Maximal Potato. Das ist der „Nachher“-Screenshot. |
+| +4 | `0x00000020` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +5 | `0x00000028` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +6 | `0x00000030` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +7 | `0x00000038` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +8 | `0x00000040` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +9 | `0x00000048` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +10 | `0x00000050` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +11 | `0x00000058` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +12 | `0x00000060` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +13 | `0x00000068` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +14 | `0x00000070` | Bringt nicht viel, aber probier es ruhig aus, wenn du willst. |
+| +15 | `0x00000078` | Maximal Potato. Das ist der „Nachher“-Screenshot. Die Minimap ist unbrauchbar. |
 
 **Kurz gesagt: Nimm +3**, außer du kommst ohne Minimap klar.
 
